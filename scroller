@@ -1,0 +1,74 @@
+<?php
+
+//the text string that I want to scroll and color is static (3 words)
+//I want each word to be a different color, so I'll define arrays of complimentary colors, each with three elements
+//this color palette can be modified of course if your needs vary!
+
+//vibrant colors
+  
+$good_pairing1 = array('#d0ad05', '#ebd00d', '#93be30');
+$good_pairing2 = array('#ee990b', '#f0db60', '#dff18d');
+$good_pairing3 = array('#dff18d', '#f0db60', '#f17a01');
+$good_pairing4 = array('#ee990b', '#d0ee0b', '#d0ad05');
+$good_pairing5 = array('#f0db60', '#d0ad05', '#dff18d');
+$good_pairing6 = array('#dff18d', '#f0db60', '#f17a01');
+$good_pairing7 = array('#dff18d', '#ebd00d', '#e9ef09');
+$good_pairing8 = array('#ee990b', '#ebd00d', '#d0ad05');
+$good_pairing9 = array('#ee990b', '#f0db60', '#d0ad05');
+$good_pairing10 = array('#d0ee0b', '#f0db60', '#ee990b');
+
+//I want the string to refresh (scroll and change colors) each time the page loads in a browser
+
+//I've defined 10 array of colors, each array contains threee complimentary colors
+
+//each time the page loads on of these arrays will be selected at random and used as the color palette for the string
+  
+$rand = rand(1,10);
+
+switch($rand)
+{
+    case '1':
+      $colors = array('#d0ad05', '#ebd00d', '#93be30');
+         break;  
+    case '2':
+      $colors = array('#ee990b', '#f0db60', '#dff18d');
+         break;         
+    case '3':
+      $colors = array('#dff18d', '#f0db60', '#f17a01');
+         break;         
+    case '4':
+      $colors = array('#ee990b', '#d0ee0b', '#d0ad05');
+         break;         
+    case '5':
+      $colors = array('#f0db60', '#d0ad05', '#dff18d');
+         break;         
+    case '6':
+      $colors = array('#dff18d', '#f0db60', '#f17a01');
+         break;  
+    case '7':
+      $colors = array('#dff18d', '#ebd00d', '#e9ef09');
+         break;         
+    case '8':
+      $colors = array('#ee990b', '#ebd00d', '#d0ad05');
+         break;         
+    case '9':
+      $colors = array('#ee990b', '#f0db60', '#d0ad05');
+         break;         
+    case '10':
+      $colors = array('#d0ee0b', '#f0db60', '#ee990b');
+         break;       
+ }
+ 
+ //define the message that we want to scroll
+ 
+ $scroll_msg = 'My Colorful Scroller';
+ 
+ //define the tags within which our text will display
+ 
+ //note: the reason for two spans is documented in the comments
+ 
+ echo '<span id="scroll_txt_outer">&nbsp;</span>';
+
+ echo '<span id="scroll_txt"></span>';
+  
+ 
