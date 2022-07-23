@@ -78,26 +78,35 @@ switch($rand)
  //call the scroller function
  
  get_scroller($scroll_msg, $colors);  
+ 
+ //call hide scroll function
+ 
+ ?>
 
-
-  ?>
-
+  <script type="text/javascript">	  
   
-	<script type="text/javascript">	  
+  hideScroll();
+    </script>
+    <?php
+
+
+//define function to hide the scroll_txt span and show the scroll_txt_outer span
+  ?>  
+
+<script type="text/javascript">	  
 
 document.getElementById("scroll_txt_outer").style.display = 'none';
 
 let hideScroll = function () {
+
+//the timeout prevents both the scrolling text and the final, non-scrolling colored text from displaying together on th screen 
+//we want the scrolling text first, then the non-scrolling (colored) version on the screen
 
   setTimeout(function () {
 
     document.getElementById("scroll_txt").style.display = 'none';
 
     document.getElementById("scroll_txt_outer").style.display = 'inline';
-
-        if (newState == -1) {
-          
-        }
     }, 1000);
 }
 
