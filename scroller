@@ -65,10 +65,45 @@ switch($rand)
  
  //define the tags within which our text will display
  
- //note: the reason for two spans is documented in the comments
+ //note: using two spans enables us to have a message scroll AND a final version with each word colored differently
+ //the initial state of the scroll_txt_outer span is hidden (document.getElementById("scroll_txt_outer").style.display = 'none';)
+ //the "scroll_txt" span will be the target of the scroller JS function and will display the scrolling message, this will be surrounded by a span or div (outside of the JS function) that is colored with a single color e.g. <div style="color:#ea4152"><span id="scroll_txt"></span></div>
+ //once the scroll has completed, the text will be hidden inside of the "scroll_txt" span (document.getElementById("scroll_txt").style.display = 'none';)
+ //and the scroll_txt_outer span will be set to visible (document.getElementById("scroll_txt_outer").style.display = 'inline';)
  
  echo '<span id="scroll_txt_outer">&nbsp;</span>';
 
  echo '<span id="scroll_txt"></span>';
+ 
+ //call the scroller function
+ 
+ get_scroller($scroll_msg, $colors);  
+
+
+  ?>
+
+  
+	<script type="text/javascript">	  
+
+document.getElementById("scroll_txt_outer").style.display = 'none';
+
+let hideScroll = function () {
+
+  setTimeout(function () {
+
+    document.getElementById("scroll_txt").style.display = 'none';
+
+    document.getElementById("scroll_txt_outer").style.display = 'inline';
+
+        if (newState == -1) {
+          
+        }
+    }, 1000);
+}
+
+  </script>
+  <?php
+  
+  
   
  
