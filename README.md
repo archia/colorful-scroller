@@ -1,2 +1,2 @@
 # colorful-scroller
-This uses only vanilla javascript, css and PHP. It enables dynamic coloring of individual words with a text string while scrolling.
+This enables a text string to scroll tele-type style with dynamic coloring of individual words of the text string. It uses only vanilla javascript, css and PHP. 
